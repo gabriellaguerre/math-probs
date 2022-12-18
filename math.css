@@ -4,6 +4,10 @@
     height: 100px;
     width: 100px;
     border: 1px black solid;
+    text-align: center;
+    bottom: 10px;
+    line-height: 100px;
+    font-size: 40px;
 }
 
 #number2 {
@@ -13,6 +17,10 @@
     height: 100px;
     width: 100px;
     border: 1px black solid;
+    text-align: center;
+    bottom: 10px;
+    line-height: 100px;
+    font-size: 40px;
 }
 
 #number3 {
@@ -22,4 +30,16 @@
     height: 100px;
     width: 100px;
     border: 1px black solid;
+    top: 30px;
+    font-size: 40px;
+}
+
+#buttonAnswer {
+    display: inline-block;
+    position: relative;
+    left: 500px;
+    bottom: 330px;
+    width: 100px;
+
+
 }
