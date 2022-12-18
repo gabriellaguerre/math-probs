@@ -12,6 +12,15 @@ window.addEventListener("DOMContentLoaded", () => {
     const div3 = document.createElement("div");
     div3.setAttribute("id", "number3");
     document.body.append(div3)
+    const inputValue = document.createElement("input");
+
+    inputValue.setAttribute("type", "text")
+    inputValue.style.fontSize = "40px";
+    
+    div3.appendChild(inputValue);
+    inputValue.addEventListener("click", () => {
+        localStorage.setItem("value", inputValue.value)
+    })
 
     const plus = document.createElement("p");
     plus.setAttribute("id", "plus")
@@ -19,7 +28,7 @@ window.addEventListener("DOMContentLoaded", () => {
     plus.innerText = "+";
     plus.style.fontSize = "50px";
     plus.style.position = "relative";
-    plus.style.bottom = "130px";
+    plus.style.bottom = "220px";
     plus.style.left = "125px";
 
     const equal = document.createElement("p");
@@ -28,7 +37,7 @@ window.addEventListener("DOMContentLoaded", () => {
     equal.innerText = "=";
     equal.style.fontSize = "50px";
     equal.style.position = "relative";
-    equal.style.bottom = "235px";
+    equal.style.bottom = "325px";
     equal.style.left = "300px";
 
     const div4 = document.createElement("div")
