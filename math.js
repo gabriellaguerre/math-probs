@@ -77,9 +77,9 @@ window.addEventListener("DOMContentLoaded", () => {
             } else {
                 //fetch emoji image instead of wrong answer
                 console.log(":( wrong answer - try again")
-                randNum1();
-                randNum2();
                 inputValue.value = '';
+                addition = firstNum + secondNum;
+                thirdNum = Number(localStorage.getItem("value"))
             }
         }
     })
