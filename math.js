@@ -4,10 +4,18 @@ window.addEventListener("DOMContentLoaded", () => {
     document.body.append(div1)
     div1.innerText = Math.floor(Math.random() * 10);
 
+    const randNum1 = () => {
+        div1.innerText = Math.floor(Math.random() * 10);
+    }
+
     const div2 = document.createElement("div");
     div2.setAttribute("id", "number2");
     document.body.append(div2)
     div2.innerText = Math.floor(Math.random() * 10);
+
+    const randNum2 = () => {
+        div2.innerText = Math.floor(Math.random() * 10);
+    }
 
     const div3 = document.createElement("div");
     div3.setAttribute("id", "number3");
@@ -16,11 +24,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
     inputValue.setAttribute("type", "text")
     inputValue.style.fontSize = "40px";
-    
+
     div3.appendChild(inputValue);
-    inputValue.addEventListener("click", () => {
-        localStorage.setItem("value", inputValue.value)
-    })
+
 
     const plus = document.createElement("p");
     plus.setAttribute("id", "plus")
@@ -47,6 +53,36 @@ window.addEventListener("DOMContentLoaded", () => {
     buttonAnswer.setAttribute("id", "answer")
     div4.appendChild(buttonAnswer);
     buttonAnswer.innerText = "Check Answer";
+
+    buttonAnswer.addEventListener("click", () => {
+        if (inputValue.value === '') {
+            return
+        } else {
+            localStorage.setItem("value", inputValue.value)
+            localStorage.setItem("num1", div1.innerText)
+            localStorage.setItem("num2", div2.innerText)
+
+            let firstNum = Number(localStorage.getItem("num1"))
+            let secondNum = Number(localStorage.getItem("num2"))
+            let thirdNum = Number(localStorage.getItem("value"))
+
+            let addition = firstNum + secondNum
+
+            if(addition === thirdNum) {
+                console.log("Hooray!!! good job")
+                //fetch emoji image instead of Hooray
+                randNum1();
+                randNum2();
+                inputValue.value = '';
+            } else {
+                //fetch emoji image instead of wrong answer
+                console.log(":( wrong answer - try again")
+                randNum1();
+                randNum2();
+                inputValue.value = '';
+            }
+        }
+    })
 
 
 
