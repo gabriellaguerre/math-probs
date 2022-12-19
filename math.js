@@ -54,6 +54,22 @@ window.addEventListener("DOMContentLoaded", () => {
     div4.appendChild(buttonAnswer);
     buttonAnswer.innerText = "Check Answer";
 
+    const div5 = document.createElement("div")
+    div5.setAttribute("id", "image")
+    document.body.append(div5)
+
+    const fetcher = () => {
+        fetch('https://emoji-api.com/categories/smileys-emotion?access_key=6905e9e1e34501e2c011e49d182c6e3a5db9b2cc')
+            .then(res => res.json())
+            .then(url => {
+                //console.log(url.length)
+                let randNum = Math.floor(Math.random() * 100)
+                let emoImage = url[randNum].character
+                div5.innerText = emoImage
+            })
+    }
+
+
     buttonAnswer.addEventListener("click", () => {
         if (inputValue.value === '') {
             return
@@ -68,16 +84,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
             let addition = firstNum + secondNum
 
-            if(addition === thirdNum) {
-                console.log("Hooray!!! good job")
-                //fetch emoji image instead of Hooray
+            if (addition === thirdNum) {
+                fetcher();
                 randNum1();
                 randNum2();
                 inputValue.value = '';
             } else {
-                //fetch emoji image instead of wrong answer
-                console.log(":( wrong answer - try again")
                 inputValue.value = '';
+                div5.innerText = 'Try Again !!!';
                 addition = firstNum + secondNum;
                 thirdNum = Number(localStorage.getItem("value"))
             }

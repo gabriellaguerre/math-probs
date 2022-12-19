@@ -25,21 +25,11 @@
     font-family:'Courier New', Courier, monospace;
 }
 
-/* #number3 {
-    display: inline-block;
-    position: relative;
-    left: 150px;
-    height: 100px;
-    width: 100px;
-    top: 30px;
-    font-size: 40px;
-} */
-
 #buttonAnswer {
     display: inline-block;
-    position: relative;
+    position: fixed;
     left: 500px;
-    bottom: 420px;
+    bottom: 350px;
     width: 100px;
 }
 
@@ -58,4 +48,15 @@ input {
 p {
     height: 50px;
     width: 50px;
+}
+
+#image {
+    display: inline-block;
+    position: relative;
+    height: 200px;
+    width: 500px;
+    left: 100px;
+    bottom: 300px;
+    font-size: 100px;
+    text-align: center;
 }
